@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    /* Add some style to the calculator */
+    .calculator {
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: sans-serif;
+    }
+    .calculator input[type="text"] {
+      width: 100%;
+      height: 50px;
+      font-size: 1.5em;
+      color: #000000;
+      border: none;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+      background-color: #fafafa;
+    }
+    .calculator button {
+      width: 25%;
+      height: 50px;
+      font-size: 1.5em;
+      border: none;
+      background-color: #ddd;
+      cursor: pointer;
+    }
+    .calculator button:hover {
+      background-color: #ccc;
+    }
+    .calculator button.operator {
+      background-color: #000000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <!-- Create the display -->
+    <input type="text" id="display" disabled>
+    <!-- Create the buttons -->
+    <div>
+      <button value="7">7</button>
+      <button value="8">8</button>
+      <button value="9">9</button>
+      <button value="+" class="operator">+</button>
+    </div>
+    <div>
+      <button value="4">4</button>
+      <button value="5">5</button>
+      <button value="6">6</button>
+      <button value="-" class="operator">-</button>
+    </div>
+    <div>
+      <button value="1">1</button>
+      <button value="2">2</button>
+      <button value="3">3</button>
+      <button value="*" class="operator">*</button>
+    </div>
+    <div>
+      <button value="C" class="operator">C</button>
+      <button value="0">0</button>
+      <button value="=" class="operator">=</button>
+      <button value="/" class="operator">/</button>
+    </div>
+  </div>
+  <!-- Add some JavaScript to make the calculator functional -->
+  <script>
+    // Get all the buttons
+    const buttons = document.querySelectorAll("button");
+    // Get the display
+    const display = document.querySelector("#display");
+    // Set up the calculator
+    let operand1 = null;
+    let operand2 = null;
+    let operator = null;
+    let result = null;
+    // Add event listeners to the buttons
+    buttons.forEach(button => {
+      button.addEventListener("click", event => {
+        // Get the value of the button
+        const value = event.target.value;
+        // Check the value of the button
+      
